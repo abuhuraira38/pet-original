@@ -2,9 +2,7 @@ const AWS = require('aws-sdk');
 const { DDB_TABLE } = require('../config');
 
 
-AWS.config.update({region: 'eu-west-1'}); //new
-
-const docClient = new AWS.DynamoDB.DocumentClient({apiVersion: '2012-08-10'});
+const docClient = new AWS.DynamoDB.DocumentClient({region: 'eu-west-1'});
 
 async function dynamoGet(params) {
     return docClient.get(params).promise();
